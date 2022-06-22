@@ -48,3 +48,28 @@ body{
     background: #fff;
     text-align: center;
 }
+.food-search{
+    margin: 2.0rem 0;
+}
+.food-search-box{
+    margin: 1.5rem 0;
+    display: flex;
+    align-items: stretch;
+}
+.food-search-cite{
+    margin: 0 1.5rem;
+}
+.search-control,
+.search-btn{
+    width: 100%;
+}
+.search-control{
+    padding: 0%;
+    font-size: 1.0rem;
+    font-family: inherit;
+    outline: 0;
+    border: 1px solid var(--tenne-tawny-light);
+    color: #1c1c1c;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}

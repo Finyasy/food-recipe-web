@@ -138,3 +138,19 @@ body{
 .recipe-btn:hover{
     background: var(--tenne-tawny-dark);
 }
+
+
+@media screen and (min-width: 500px){
+    .food-search-box{
+        width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media screen and (min-width: 768px){
+    #food{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}

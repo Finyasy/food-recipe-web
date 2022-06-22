@@ -1,1 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Monoton&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+    --tenne-tawny: #1c1c1c;
+    --tenne-tawny-light: #1c1c1c;
+}
+body{
+    font-weight: 200;
+    font-size: 1.0rem;
+    line-height: 1.5;
+    font-family: 'poppins', sans-serif;
+}
+
+/*  */
+
+.btn{
+    font-family: inherit;
+    cursor: pointer;
+    outline: 0;
+    font-size: 1.0rem;
+}
+.text{
+    opacity: 0.6;
+}
+.text:hover{
+    opacity: 1;
+}
+.title{
+    font-size: 2.0rem;
+    font-weight: 700;
+    color: var(--tenne-tawny);
+    margin-bottom: 1.5rem;
+}
+/*  */
+.container{
+    min-height: 100vh;
+}
+.food-wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #fff;
+    text-align: center;
+}

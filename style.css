@@ -139,6 +139,48 @@ body{
     background: var(--tenne-tawny-dark);
 }
 
+/* Food details */
+.food-details{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    color: black;
+    background: var(--tenne-tawny);
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    width: 90%;
+    height: 90%;
+    overflow-y: scroll;
+    padding: 2rem 0;
+}
+.food-details::-webkit-scrollbar{
+    width: 10px;
+}
+.food-details::-webkit-scrollbar-thumb{
+    background: #f0f0f0;
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+}
+
+/* JS*/
+.showRecipe{
+    display: block;
+}
+
+.food-details-content{
+    margin: 2rem 0;
+}
 
 @media screen and (min-width: 500px){
     .food-search-box{
@@ -152,5 +194,13 @@ body{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
+    }
+    .food-item{
+        margin: 0;
+    }
+}
+@media screen and (min-width: 900px){
+    #food{
+        grid-template-columns: repeat(3, 1fr);
     }
 }

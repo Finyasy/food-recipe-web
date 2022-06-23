@@ -4,9 +4,10 @@ const foodDetailsContent = document.querySelector('.food-details-content');
 const recipeButtonClose = document.getElementById('recipe-close-btn');
 
 //event listeners
-searchButton.addEventListener('click', getFood);
+searchButton.addEventListener('click', getFoodList);
+foodList.addEventListener('click', getFoodRecipe);
 
-function getFood(){
+function getFoodList(){
     let searchInputText = document.getElementById('search-input').value.trim();
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputText}`)
     .then(response => response.json())
@@ -33,3 +34,34 @@ function getFood(){
         foodList.innerHTML = html;
     })
 }
+
+//get food recipe
+function getFoodRecipe(e){
+    e.preventDefault();
+    if(e.target.classList.contains('recipe-btn')){
+        let foodItem = e.target.parentElement.parentElement;
+        fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${foodItem.dataset.id}`)
+        .then(response => response.json())
+        .then(data => foodRecipeModal(data.meals))
+    }
+}
+
+    function foodRecipeModal(food){
+        console.log(food);
+        food = food[0];
+        let html = `
+        <h2 class="recipe-title">${food.strMeal}</h2>
+            <p class="recipe-category">${food.strCategory}</p>
+            <div class="recipe-instructions">
+                <h3>Instructions:</h3>
+                <p>${food.strInstructions}</p>
+            </div>
+            <div class="${food.strMealThumb}">
+                <img src="food.webp" alt="food">
+            </div>
+            <div class="recipe-link">
+                <a href="${food.strYoutube}" target="_blank" >Watch Video</a>
+            </div>`
+            foodDetailsContent.innerHTML = html;
+            foodDetailsContent.classList.add('showRecipe');
+    }

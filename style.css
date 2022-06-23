@@ -174,7 +174,7 @@ body{
     -o-border-radius: 2rem;
 }
 
-/* JS*/
+/* javascript related*/
 .showRecipe{
     display: block;
 }
@@ -182,7 +182,7 @@ body{
 .food-details-content{
     margin: 2rem 0;
 }
-.food-details-content p:not(recipe-category){
+.food-details-content p:not(.recipe-category){
     padding: 2rem 0;
 }
 

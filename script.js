@@ -17,7 +17,7 @@ function getFoodList(){
         if(data.meals){
         data.meals.forEach(food => {
             html += `
-            <div class="food-item" data-id = "${food.idMeal}">
+            <div class="fooditem" data-id = "${food.idMeal}">
                 <div class="food-img">
                     <img src="${food.strMealThumb}" alt="food">
                 </div>
@@ -48,21 +48,20 @@ function getFoodRecipe(e){
 }
 
 function foodRecipeModal(food){
-    console.log(food);
     food = food[0];
     let html = `
-    <h2 class="recipe-title">${food.strMeal}</h2>
+        <h2 class="recipe-title">${food.strMeal}</h2>
         <p class="recipe-category">${food.strCategory}</p>
         <div class="recipe-instructions">
             <h3>Instructions:</h3>
             <p>${food.strInstructions}</p>
         </div>
-        <div class="${food.strMealThumb}">
-            <img src="food.webp" alt="food">
+        <div class="recipe-food-image">
+            <img src="${food.strMealThumb}" alt="food">
         </div>
         <div class="recipe-link">
             <a href="${food.strYoutube}" target="_blank" >Watch Video</a> 
         </div>`
         foodDetailsContent.innerHTML = html;
-        foodDetailsContent.classList.add('showRecipe');
+        foodDetailsContent.parentElement.classList.add("showRecipe");
 }

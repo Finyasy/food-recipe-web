@@ -6,6 +6,7 @@ const recipeButtonClose = document.getElementById('recipe-close-btn');
 //event listeners
 searchButton.addEventListener('click', getFoodList);
 foodList.addEventListener('click', getFoodRecipe);
+recipeButtonClose.addEventListener('click', () => foodDetailsContent.classList.remove('showRecipe'));
 
 function getFoodList(){
     let searchInputText = document.getElementById('search-input').value.trim();
@@ -14,14 +15,14 @@ function getFoodList(){
     .then(data => {
         let html = '';
         if(data.meals){
-        data.meals.forEach(meal => {
+        data.meals.forEach(food => {
             html += `
-            <div class="food-item" data-id = "${meal.idMeal}">
+            <div class="food-item" data-id = "${food.idMeal}">
                 <div class="food-img">
-                    <img src="${meal.strMealThumb}" alt="food">
+                    <img src="${food.strMealThumb}" alt="food">
                 </div>
                 <div class="food-name">
-                    <h3>${meal.strMeal}</h3>
+                    <h3>${food.strMeal}</h3>
                     <a href="#" class="recipe-btn">Get Recipe</a>
                 </div>
             </div>`;
@@ -46,22 +47,22 @@ function getFoodRecipe(e){
     }
 }
 
-    function foodRecipeModal(food){
-        console.log(food);
-        food = food[0];
-        let html = `
-        <h2 class="recipe-title">${food.strMeal}</h2>
-            <p class="recipe-category">${food.strCategory}</p>
-            <div class="recipe-instructions">
-                <h3>Instructions:</h3>
-                <p>${food.strInstructions}</p>
-            </div>
-            <div class="${food.strMealThumb}">
-                <img src="food.webp" alt="food">
-            </div>
-            <div class="recipe-link">
-                <a href="${food.strYoutube}" target="_blank" >Watch Video</a>
-            </div>`
-            foodDetailsContent.innerHTML = html;
-            foodDetailsContent.classList.add('showRecipe');
-    }
+function foodRecipeModal(food){
+    console.log(food);
+    food = food[0];
+    let html = `
+    <h2 class="recipe-title">${food.strMeal}</h2>
+        <p class="recipe-category">${food.strCategory}</p>
+        <div class="recipe-instructions">
+            <h3>Instructions:</h3>
+            <p>${food.strInstructions}</p>
+        </div>
+        <div class="${food.strMealThumb}">
+            <img src="food.webp" alt="food">
+        </div>
+        <div class="recipe-link">
+            <a href="${food.strYoutube}" target="_blank" >Watch Video</a> 
+        </div>`
+        foodDetailsContent.innerHTML = html;
+        foodDetailsContent.classList.add('showRecipe');
+}

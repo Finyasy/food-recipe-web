@@ -159,6 +159,7 @@ body{
     width: 90%;
     height: 90%;
     overflow-y: scroll;
+    display: none;
     padding: 2rem 0;
 }
 .food-details::-webkit-scrollbar{
@@ -247,10 +248,18 @@ body{
     -ms-transition: all 0.4s linear;
     -o-transition: all 0.4s linear;
 }
-.recipe-link a{
+.recipe-link a:hover{
     opacity: 0.9;
 }
 
+
+.notFound{
+    grid-template-columns: 1fr!important;
+    color: var(--tenne-tawny);
+    font-size: 1.8rem;
+    font-weight: 600;
+    width: 100%;
+}
 
 
 

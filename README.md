@@ -2,7 +2,7 @@
 > My website will access a public food API and  detail information about different food recipes.
 > Live Demo: [https://finyasy.github.io/food-recipe-web/](https://finyasy.github.io/food-recipe-web/)
 ## Project Description.
-Food recipe web is a website that will access TheMealDB public food API and  detail information about different food recipes.This will then be rendered in form of images whereby a customer can like,dislike or comment by clicking the YouTube link provided for different meals.By providing a collective site for meal recipes,it will help the customer to find the best meal for their needs.
+Food recipe web is a website that will access TheMealDB public food API[https://www.themealdb.com/api.php](https://www.themealdb.com/api.php) and  detail information about different food recipes.This will then be rendered in form of images whereby a customer can like,dislike or comment by clicking the YouTube link provided for different meals.By providing a collective site for meal recipes,it will help the customer to find the best meal for their needs.
 
 ## Technologies.
 - HTML5.
